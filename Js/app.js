@@ -1,20 +1,13 @@
-// 1) passo seletores de elementos
+// Criando um link apenas com JavaScript, essa é a estrutura montada, também adicionamos uma div com Id no html
+// Para fazer a comunicação entre eles (HTML E JS)
 
-const titulo = document.getElementById("titulo");
-console.log(titulo);
+let link = document.createElement("a");
+link.setAttribute("href", "https://frontpush.com.br");
 
-const subtitle = document.getElementsByClassName("subtitle");
-console.log(subtitle);
+let conteudo = document.createTextNode("Acessar o FrontPush");
 
-const ul = document.getElementsByTagName("ul");
-console.log(ul);
+link.appendChild(conteudo);
 
-const menu = document.querySelector(".menu .menu-item");
-console.log(menu);
+let container = document.querySelector("#app");
 
-const items = document.querySelectorAll(".menu .menu-item");
-console.log(items);
-
-items.forEach((item) => {
-  item.classList.add("item-classe");
-});
+container.appendChild(link);
