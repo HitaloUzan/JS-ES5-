@@ -1,13 +1,15 @@
-// Criando um link apenas com JavaScript, essa é a estrutura montada, também adicionamos uma div com Id no html
-// Para fazer a comunicação entre eles (HTML E JS)
+// Eventos
 
-let link = document.createElement("a");
-link.setAttribute("href", "https://frontpush.com.br");
+let box = document.querySelector(".box");
 
-let conteudo = document.createTextNode("Acessar o FrontPush");
+function callback(event) {
+  if (event.key == "r") {
+    box.classList.toggle("red");
+  } else if (event.key == "b") {
+    box.classList.toggle("blue");
+  } else {
+    box.classList.toggle("green");
+  }
+}
 
-link.appendChild(conteudo);
-
-let container = document.querySelector("#app");
-
-container.appendChild(link);
+window.addEventListener("keydown", callback);

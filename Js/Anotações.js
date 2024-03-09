@@ -38,3 +38,71 @@ link.appendChild(conteudo);
 let container = document.querySelector("#app");
 
 container.appendChild(link);
+
+// renderizando o CSS no javascript
+
+link.style.textDecoration = "none";
+link.style.color = "#fff";
+
+let box = document.querySelector(".box");
+box.style.width = "200px";
+box.style.height = "200px";
+box.style.backgroundColor = "#fff";
+
+// Descrobrindo tamanhos de um objeto com js
+
+let box = document.querySelector(".box");
+console.log(box.clientWidth); // Me retorna a largura do objeto selecionado.
+console.log(box.clientHeight); // Me retorna a altura do objeto selecionado.
+console.log(box.offsetTop); // Me retorna a distancia entre o objeto e o topo da pagina
+console.log(box.offsetLeft); // Me retorna a distancia entre o objeto e a esquerda da pagina
+console.log(window.innerWidth); // Me retorna o tamanho da janela (Pagina web) apenas a area do site as areas de configurações não.
+console.log(window.outerWidth); // Me retorna o tamanho da janela (Pagina web) tela inteira.
+console.log(window.pageYOffset); // Me retorna a distancia percorrida no scroll da janela.
+
+// Criando Responsividade
+
+const media = window.matchMedia("(max-width: 540px)");
+console.log(media);
+
+if (media.matches) {
+  console.log("Tela é mobile");
+} else {
+  console.log("Tela é Descktop");
+}
+
+//  Eventos Js.
+
+let box = document.querySelector(".box");
+
+function callback(event) {
+  console.log(event.composedPath());
+}
+
+box.addEventListener("click", callback);
+
+// Eventos
+
+let box = document.querySelector(".box");
+
+function callback(event) {
+  console.log(event);
+}
+
+window.addEventListener("keydown", callback);
+
+// Eventos
+
+let box = document.querySelector(".box");
+
+function callback(event) {
+  if (event.key == "r") {
+    box.classList.toggle("red");
+  } else if (event.key == "b") {
+    box.classList.toggle("blue");
+  } else {
+    box.classList.toggle("green");
+  }
+}
+
+window.addEventListener("keydown", callback);
