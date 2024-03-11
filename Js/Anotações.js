@@ -106,3 +106,132 @@ function callback(event) {
 }
 
 window.addEventListener("keydown", callback);
+
+// é tipo uma lista expasiva.
+
+// Accordion list
+
+document.querySelectorAll(".accordion-content").forEach((item) => {
+  item.style.maxHeight = 0;
+});
+
+document.querySelectorAll(".accordion-button").forEach((button) => {
+  button.addEventListener("click", () => {
+    const accordionContent = button.nextElementSibling;
+
+    button.classList.toggle("active");
+
+    if (button.classList.contains("active")) {
+      accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
+    } else {
+      accordionContent.style.maxHeight = 0;
+    }
+  });
+});
+
+// CSS dessa lista
+
+// .container {
+//   max-width: 500px;
+//   margin: 0 auto;
+
+//   padding: 40px;
+// }
+
+// .border {
+//   border: 1px solid red;
+// }
+
+// .accordion-button {
+//   display: block;
+//   width: 100%;
+
+//   cursor: pointer;
+//   background-color: transparent;
+
+//   padding: 8px 16px;
+//   margin-top: 16px;
+// }
+
+// .accordion-content {
+//   overflow: hidden;
+// }
+
+// HTML dessa lista
+// <body>
+//<section class="container border">
+//<div class="accordion">
+//<button type="button" class="accordion-button border">
+//<h4>Primeiro item</h4>
+//</button>
+//<div class="accordion-content border">
+// <p>
+// Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint modi
+//laborum aliquid ducimus mollitia aut fugiat quae exercitationem
+//tempora sed? Eaque,tempore porro aspernatur tempora quod aperiam
+//reprehenderit optio facilis.
+// </p>
+//</div>
+
+// <button type="button" class="accordion-button border">
+//  <h4>Segundo item</h4>
+// </button>
+//  <div class="accordion-content border">
+//  <p>
+//    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint modi
+//    laborum aliquid ducimus mollitia aut fugiat quae exercitationem
+//   tempora sed? Eaque,tempore porro aspernatur tempora quod aperiam
+//   reprehenderit optio facilis.
+// </p>
+//  </div>
+
+//  <button type="button" class="accordion-button border">
+//   <h4>Terceiro item</h4>
+// </button>
+//  <div class="accordion-content border">
+//     <p>
+//   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint modi
+//   laborum aliquid ducimus mollitia aut fugiat quae exercitationem
+//   tempora sed? Eaque,tempore porro aspernatur tempora quod aperiam
+//   reprehenderit optio facilis.
+// </p>
+//  </div>
+// </div>
+// </section>
+
+// <script src="Js/app.js"></script>
+//</body>;
+
+// modal
+
+const button = document.querySelector("button");
+const modal = document.getElementById("mymodal");
+const close = document.querySelector(".close");
+
+button.addEventListener("click", () => {
+  modal.classList.add("modal-active");
+});
+
+close.addEventListener("click", () => {
+  modal.classList.remove("modal-active");
+});
+
+// JSON
+
+JSON.parse(); // transforma o texto JSON em objeto
+JSON.stringify(); // Transoforma o objeto em arquivo JSON
+
+// JSON
+
+const json = JSON.parse(
+  '{"id": 1, "nome": "Notebook Dell","modelo": "Gamer", "quantidade": 5}'
+);
+
+const caneta = {
+  cor: "azul",
+  formato: "triangular",
+  tipo: "desenho",
+};
+
+const stringjson = JSON.stringify(caneta);
+console.log(stringjson);

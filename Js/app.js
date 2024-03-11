@@ -1,15 +1,14 @@
-// Eventos
+// JSON
 
-let box = document.querySelector(".box");
+const json = JSON.parse(
+  '{"id": 1, "nome": "Notebook Dell","modelo": "Gamer", "quantidade": 5}'
+);
 
-function callback(event) {
-  if (event.key == "r") {
-    box.classList.toggle("red");
-  } else if (event.key == "b") {
-    box.classList.toggle("blue");
-  } else {
-    box.classList.toggle("green");
-  }
-}
+const caneta = {
+  cor: "azul",
+  formato: "triangular",
+  tipo: "desenho",
+};
 
-window.addEventListener("keydown", callback);
+const stringjson = JSON.stringify(caneta);
+console.log(stringjson);
