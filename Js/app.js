@@ -1,14 +1,6 @@
-// JSON
+// module js
+import retangulo from "./retangulo";
+import { upperName } from "./string";
 
-const json = JSON.parse(
-  '{"id": 1, "nome": "Notebook Dell","modelo": "Gamer", "quantidade": 5}'
-);
-
-const caneta = {
-  cor: "azul",
-  formato: "triangular",
-  tipo: "desenho",
-};
-
-const stringjson = JSON.stringify(caneta);
-console.log(stringjson);
+console.log(areaRetangulo(2, 2));
+console.log(upperName("Teste"));
