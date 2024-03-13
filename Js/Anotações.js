@@ -287,3 +287,19 @@ axios
   .catch(function (error) {
     console.log(error);
   });
+
+//  desestrururação
+
+document.documentElement.addEventListener("mousemove", MouseMove);
+
+function MouseMove({ clientX, clientY }) {
+  console.log(clientX, clientY);
+}
+
+const carros = ["volks", "fiat", "bmw", "audi"];
+
+const [marca1, marca2, marca3, marca4] = carros;
+
+const funcao = function () {};
+
+console.log(marca);
