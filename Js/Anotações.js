@@ -303,3 +303,91 @@ const [marca1, marca2, marca3, marca4] = carros;
 const funcao = function () {};
 
 console.log(marca);
+
+// Pratica
+
+let listElement = document.querySelector(".list");
+let textElement = document.querySelector("input");
+let buttonElement = document.querySelector("button");
+
+let arr = [
+  "Fazer um chá",
+  "Ver aulas do FrontPush de JS",
+  "Tentar executar sozinho",
+];
+
+function renderTodo() {
+  listElement.innerHTML = "";
+
+  arr.forEach((item, index) => {
+    var liElement = document.createElement("li");
+    var liText = document.createTextNode(item);
+
+    var linkLi = document.createElement("a");
+    var TextLink = document.createTextNode("Excluir");
+
+    linkLi.setAttribute("hred", "#");
+    linkLi.setAttribute("onclick", "deleteItem('+ index +')");
+
+    linkLi.appendChild(TextLink);
+
+    liElement.appendChild(liText);
+    liElement.appendChild(linkLi);
+    listElement.appendChild(liElement);
+  });
+}
+
+renderTodo();
+
+buttonElement.addEventListener("click", addItem);
+
+function addItem() {
+  var itemTexto = textElement.value;
+  arr.push(itemTexto);
+  renderTodo();
+}
+
+function deleteItem(pos) {
+  arr.splice(pos, 1);
+
+  renderTodo();
+}
+//  Pratica
+const numero = 1;
+const String = "Hitalo";
+const vetor = [10, 8, 15, 26, 1, 6, 50];
+const nomes = ["Nayara", "Nasser", "João", "Maria"];
+const objeto = [{ caneta: "esferográfica" }];
+
+console.log(String.raw);
+
+const title = document.querySelector(".title");
+console.log(title);
+console.log(vetor);
+
+function mediaAritimetica(armario) {
+  var total = 0;
+
+  armario.forEach((item) => {
+    total = total + item;
+  });
+
+  return total / armario.length;
+}
+
+console.log(mediaAritimetica(vetor));
+//  Pratica
+
+const vetsor = [5, 10, 19, 24, 55];
+
+// Instanciando a função, construindo a função
+function somaArray(array) {
+  var total = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    //total = total + array[i];
+    total += array[i];
+  }
+  return total;
+}
+console.log(somaArray(vetor));
